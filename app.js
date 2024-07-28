@@ -211,6 +211,7 @@ function asignarTextoElemento(elemento,texto){
 
 function checkType(mensaje) {
     mensaje = String(mensaje).replace(/[" "]/g,"");
+    mensaje = mensaje.replace(/\n/g, '');
     mensaje = String(mensaje).trim();
     console.log(mensaje);
     const regxs = {
