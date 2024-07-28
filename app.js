@@ -1,16 +1,10 @@
-
 let circle = document.querySelector(".circle");
 let toggle_box = document.querySelector(".toggle_box");
 let checkbox = document.getElementById("checkbox");
 let body = document.body;
 const lightImage = document.getElementById('light-theme-image');
 const darkImage = document.getElementById('dark-theme-image');
-// Ventana modal
-var modal = document.getElementById("ventanaModal");
-// Botón que abre el modal
-var boton = document.getElementById("abrirModal");
-// Hace referencia al elemento <span> que tiene la X que cierra la ventana
-var span = document.getElementsByClassName("close")[0];
+
 var result;
 var texto;
 var texto_total;
@@ -93,27 +87,28 @@ function encriptar(){
        condiciones_iniciales()
     
         }
-        else{
-    ocultar('inicio');
-    const chars = {
-        'a': 'ai',
-        'e': 'enter',
-        'i': 'imes',
-        'o':  'ober',
-        'u':  'ufat'
-      };
-      s = texto.replace(/[aeiou]/g, m => chars[m]);
-    asignarTextoElemento('#texto_total',s);
-    mostrar('encripta_texto');
-    limpiarCaja('#texto');
-    document.getElementById('texto').focus();
-}
+        else {
+          ocultar('inicio');
+          const chars = {
+              'a': 'ai',
+              'e': 'enter',
+              'i': 'imes',
+              'o': 'ober',
+              'u': 'ufat'
+          };
+          let encripta = texto.replace(/[aeiou]/g, m => chars[m]);
+          asignarTextoElemento('#texto_total', encripta);
+          mostrar('encripta_texto');
+          limpiarCaja('#texto');
+          document.getElementById('copiar').focus();
+      }
 }
 
 
 function desencriptar(){
     texto= document.getElementById('texto').value;
     result= checkType(texto);
+    limpiarCaja('#texto_total');
     if (document.getElementById('texto').value==''){
       Swal.fire({
         title: 'Oops...',
@@ -145,28 +140,27 @@ function desencriptar(){
             customClass:{
               popup: 'popup-class'
               },
-          });condiciones_iniciales()
+          });condiciones_iniciales();
     
         }
 
-        else{
-            ocultar('inicio');
-            const reverseChars = {
-                'ai':'a',
-                'enter':'e',
-                'imes':'i',
-                'ober':'o',
-                'ufat':'u'
-              };
-              // Crear una expresión regular para buscar las secuencias codificadas
-            const reverseRegEx = new RegExp(Object.keys(reverseChars).join('|'), 'g');
-            // Reemplazar las secuencias codificadas con sus correspondientes vocales
-            s = s.replace(reverseRegEx, m => reverseChars[m]);
-            asignarTextoElemento('#texto_total',s);
-            mostrar('encripta_texto');
-            limpiarCaja('#texto');
-            document.getElementById('texto').focus();
-        }
+        else {
+          ocultar('inicio');
+          const reverseChars = {
+              'ai': 'a',
+              'enter': 'e',
+              'imes': 'i',
+              'ober': 'o',
+              'ufat': 'u'
+          };
+          const reverseRegEx = new RegExp(Object.keys(reverseChars).join('|'), 'g');
+          // Define `s` before using it
+          let s = texto.replace(reverseRegEx, m => reverseChars[m]);
+          asignarTextoElemento('#texto_total', s);
+          mostrar('encripta_texto');
+          limpiarCaja('#texto');
+          document.getElementById('copiar').focus();
+      }
 
 }
 
@@ -210,7 +204,7 @@ function limpiarCaja(caja){
 }
 function asignarTextoElemento(elemento,texto){
     let elementoHTML= document.querySelector(elemento);
-    elementoHTML.innerHTML = texto;
+    elementoHTML.value = texto;
     return;
 }
 
@@ -234,6 +228,12 @@ function checkType(mensaje) {
       if (regxs.upperLower.test(mensaje)){
        return '2';
       }
+      
+      return -1;
+  }
+
+
+
       
       return -1;
   }
