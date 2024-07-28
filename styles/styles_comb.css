@@ -38,6 +38,8 @@
 }
 
 .light-theme .header{
+    height: 100%;
+    width: 100%;
     background-color: var(--color-primario);
     font-family: var(--fuente-kalam);
     font-size: 1.25 rem;
@@ -259,6 +261,8 @@
 
 
 .dark-theme {
+    height: 100%;
+    width: 100%;
     background-image: url(/img/6538524.jpg);
     background-repeat: no-repeat;
     background-attachment:fixed;
