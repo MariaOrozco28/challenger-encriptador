@@ -52,7 +52,6 @@ function condiciones_iniciales(){
 function encriptar(){
     texto= document.getElementById('texto').value;
     result= checkType(texto);
-    console.log(result);
     if (document.getElementById('texto').value==''){
       Swal.fire({
         title: 'Oops...',
@@ -213,7 +212,6 @@ function checkType(mensaje) {
     mensaje = String(mensaje).replace(/[" "]/g,"");
     mensaje = mensaje.replace(/\n/g, '');
     mensaje = String(mensaje).trim();
-    console.log(mensaje);
     const regxs = {
       "lower": /^[a-z]+$/,
       "upper": /^[A-Z0-9ÁÉÍÓÚÑÜ!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+$/,
