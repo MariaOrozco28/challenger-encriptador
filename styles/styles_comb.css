@@ -30,7 +30,7 @@
     background-image: url(/img/5404585.jpg);
     background-repeat: no-repeat;
     background-attachment:fixed;
-    background-size:100%;
+    background-size:cover;
     color:var(--color-secundario);
     /*height: 100vh;*/ /* ocupe toda la pantalla*/
     box-sizing: border-box; /* se usa para que el elemento "no se salga de la pantalla" es decir, le coloca un limite al elemento*/
@@ -266,7 +266,7 @@
     background-image: url(/img/6538524.jpg);
     background-repeat: no-repeat;
     background-attachment:fixed;
-    background-size:100%;
+    background-size:cover;
     color:var(--color-blanco);
     /*height: 100vh;*/ /* ocupe toda la pantalla*/
     box-sizing: border-box; /* se usa para que el elemento "no se salga de la pantalla" es decir, le coloca un limite al elemento*/
@@ -496,7 +496,7 @@
 
 /*/////////////////////////////////////////////////////////////////////////////////////*/
 
-@media (max-width:900px) {
+@media (max-width:1100px) {
     .light-theme {
         background-size:cover;
     }
