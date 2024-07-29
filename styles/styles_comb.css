@@ -45,6 +45,7 @@
     font-size: 1.25 rem;
     color: var(--color-secundario);
     display: flex;
+    text-align:center;
     justify-items: baseline;    
     justify-content: space-around;
 }
@@ -628,5 +629,12 @@
         flex-direction: column;
     }
 }
+
+@media (min-height:700px ){
+    .Presentacion{
+        padding: 4% 0;
+    }
+}
+
 
 
