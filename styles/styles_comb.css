@@ -50,10 +50,7 @@
     justify-content: space-around;
 }
 
-.light-theme .vector{
-    display: flex;
- 
-}
+
 
 .light-theme .Presentacion{
     display: flex;
@@ -508,9 +505,7 @@
     
    
     
-    .light-theme .vector{
-        display: flex;
-    }
+    
     
     .light-theme .Presentacion{
         display: flex;
@@ -572,9 +567,7 @@
         background-size:cover;
     }
     
-    .dark-theme .vector{
-        display: flex;
-    }
+   
     
     .dark-theme .Presentacion{
         display: flex;
