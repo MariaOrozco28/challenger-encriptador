@@ -99,7 +99,6 @@ function encriptar(){
           let encripta = texto.replace(/[aeiou]/g, m => chars[m]);
           asignarTextoElemento('#texto_total', encripta);
           mostrar('encripta_texto');
-          limpiarCaja('#texto');
           document.getElementById('copiar').focus();
       }
 }
@@ -158,7 +157,6 @@ function desencriptar(){
           let s = texto.replace(reverseRegEx, m => reverseChars[m]);
           asignarTextoElemento('#texto_total', s);
           mostrar('encripta_texto');
-          limpiarCaja('#texto');
           document.getElementById('copiar').focus();
       }
 
@@ -178,7 +176,10 @@ function copiar(){
             customClass:{
               popup: 'popup-class'
               },
-          });condiciones_iniciales();
+          });
+            limpiarCaja('#texto');
+            condiciones_iniciales();
+            
         }).catch(function(err) {
           Swal.fire({
             title: 'Error al copiar texto',
